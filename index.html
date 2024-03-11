@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tugas (BMI Kalkulator Ibnu)</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <header>
+            <h1>BMI Kalkulator - Ibnu Yudhana</h1>
+            <hr>
+        </header>
+        <main>
+            <div class="main-container">
+                <!-- Form BMI -->
+                <div class="container-item">
+                    <h3>BMI Kalkulator</h3>
+                    <p>Berat badan ideal adalah impian semua orang. Tidak hanya memiliki bentuk tubuh yang menunjang penampilan, berat badan ideal juga menandakan kondisi tubuh yang sehat. Bagaimana denganmu? Yuk, hitung sekarang di BMI Kalkulator.</p>
+                    <section class="form">
+                        <div>
+                            <label>Jenis Kelamin</label><br/>
+                            <input type="radio" id="man" name="gender"><label for="man">Laki-Laki</label>
+                            <input type="radio" id="woman" name="gender"><label for="woman">Perempuan</label>
+                            <hr>
+                        </div>
+                        <div>
+                            <label>Berat badan (kg)</label><br/>
+                            <input type="number" class="form-input">
+                            <hr>
+                        </div>
+                        <div>
+                            <label>Tinggi Badan (m)</label><br/>
+                            <input type="number" class="form-input">
+                            <hr>
+                        </div>
+                        <div class="form-button">
+                            <button type="button" id="calculate-button">Hitung BMI</button>
+                            <button type="button">Reset</button>
+                        </div>
+                    </section>
+                </div>
+                <!-- Form Result -->
+                <div class="container-item">
+                    <h3>Hasil</h3>
+                    <section class="result">
+                        <p>Berat Badan Berlebih</p>
+                        <h1 style="font-size: 2em;">0</h1>
+                        <p>Anda Memiliki Berat Badan Berlebih</p>
+                        <button type="button">Download Hasil BMI</button>
+                    </section>
+                </div>
+
+            </div>
+        </main>
+        <footer></footer>
+        <script src="js/script.js"></script>
+    </body>
+</html>
