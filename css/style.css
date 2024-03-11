@@ -1,18 +1,20 @@
 header>h1 {
     height: 100%;
     text-align: center;
-    background-color: rgb(131, 250, 171);
+    background-color: #333;
     margin: 0px;
     padding: 24px;
+    color: white;
 }
 
 .main-container {
+    background-color: rgb(199, 192, 192);
     display: flex;
 }
 
 .container-item {
     border: 1px solid;
-    width: 100%;
+    width: 30%;
     padding: 24px;
 }
 
@@ -64,6 +66,24 @@ button {
     border-radius: 8px;
 }
 
-.result>p {
-    font-size: large;
+.button-result {
+    background-color: coral;
+}
+
+/* Form Result 2 */
+
+.result-2 {
+    background-color: aquamarine;
+    padding: 8px;
+    border-radius: 8px;
+    padding-left: 24px;
+}
+
+.container-closer {
+    height: 100%;
+    text-align: center;
+    background-color: #333;
+    margin: 0px;
+    padding: 24px;
+    color: white;
 }
