@@ -3,6 +3,7 @@
     <head>
         <title>Tugas (BMI Kalkulator Ibnu)</title>
         <link rel="stylesheet" href="css/style.css">
+        <script src="js/script.js"></script>
     </head>
     <body style="margin: 0px;">
         <header>
@@ -16,28 +17,33 @@
                 <div class="container-item">
                     <h2>BMI Kalkulator</h2>
                     <p>Berat badan ideal adalah impian semua orang. Tidak hanya memiliki bentuk tubuh yang menunjang penampilan, berat badan ideal juga menandakan kondisi tubuh yang sehat. Bagaimana denganmu? Yuk, hitung sekarang di BMI Kalkulator.</p>
-                    <section class="form">
+                    <form id="form" onsubmit="return false;">
                         <div>
-                            <label>Jenis Kelamin</label><br/>
-                            <input type="radio" id="man" name="gender"><label for="man">Laki-Laki</label>
+                            <label class="control-label">Jenis Kelamin</label><br/>
+                            <input type="radio" id="man" name="gender" checked><label for="man">Laki-Laki</label>
                             <input type="radio" id="woman" name="gender"><label for="woman">Perempuan</label>
                             <hr>
                         </div>
                         <div>
-                            <label>Berat badan (kg)</label><br/>
-                            <input type="number" class="form-input">
+                            <label class="control-label">Nama</label><br/>
+                            <input name="name" type="text" id="bminame" class="form-input">
                             <hr>
                         </div>
                         <div>
-                            <label>Tinggi Badan (m)</label><br/>
-                            <input type="number" class="form-input">
+                            <label class="control-label">Berat badan (kg)</label><br/>
+                            <input name="weight" type="number" id="bmiweight" class="form-input">
+                            <hr>
+                        </div>
+                        <div>
+                            <label class="control-label">Tinggi Badan (cm)</label><br/>
+                            <input name="height" type="number" id="bmiheight" class="form-input">
                             <hr>
                         </div>
                         <div class="form-button">
-                            <button type="button" id="calculate-button">Hitung BMI</button>
-                            <button type="button">Reset</button>
+                            <button type="text" id="calculate-button" onclick="hitungBMI()">Hitung BMI</button>
+                            <button type="text" id="reset-button" onclick="resetBMI()">Reset</button>
                         </div>
-                    </section>
+                    </form>
                         <h3 style="text-align: left; margin-bottom: 0px;">Keunggulan Fitur</h3>
                             <ol type="1" style="margin-top: 5px;">
                                  <li>Menghitung berat badan</li>
@@ -54,20 +60,19 @@
                 <div class="container-item" style="width: 40%;">
                     <h2>Hasil</h2>
                     <section class="result">
-                        <p style="font-size: large;">Berat Badan Berlebih</p>
-                        <h1 style="font-size: 2em;">0</h1>
-                        <p  style="font-size: large;">Anda Memiliki Berat Badan Berlebih</p>
+                        <p style="font-weight: bold;" id="bminame-result">Nama</p>
+                        <p style="font-size: large;" id="hasil-kualitas">Hasil</p>
+                        <h1 style="font-size: 2em;" id="hasil-bmi">--</h1>
+                        <p  style="font-size: large;" id="hasil-keterangan">Hasil</p>
                         <button type="button" class="button-result">Download Hasil BMI</button>
                     </section>
                     <hr>
-                    <section class="result">
-                        <p style="margin: 0px;">Berat rendah dapat menyebabkan berbagai masalah penyakit</p>
-                        <p style="margin: 5px;">Infertilitas</p>
-                        <p style="margin: 5px;">Anemia</p>
-                        <p style="margin: 5px;">Osteoporosis</p>
-                        <p style="margin: 5px; margin-bottom: 20px;">Sistem Imun Lemah</p>
-                        <button type="button" class="button-result">Konsultasi Dokter Via Aplikasi</button>
-                        <button type="button" class="button-result">Registrasi Online Sekarang</button> 
+                    <section class="result" style="padding-bottom: 8px;">
+                        <p id="hasil-1" style="margin: 0px;">Hasil Normal</p>
+                        <p id="hasil-2" style="margin: 5px;">1</p>
+                        <p id="hasil-3" style="margin: 5px;">2</p>
+                        <p id="hasil-4" style="margin: 5px;">3</p>
+                        <p id="hasil-5" style="margin: 5px;">4</p>
                     </section>
                     <section style="padding: 2px;">
                         <p>Kalkulator akan memberi Anda gambaran tentang perbandingan berat badan Anda dengan nilai umum. 
@@ -78,10 +83,11 @@
                 <!-- Form Result 2 -->
                 <div class="container-item">
                     <section class="result-2">
-                        <p style="font-size: large;">Hasil BMI < 18.5</p>
-                        <p>Anda berada dalam kategori kekurangan berat badan. Hubungi dokter lebih lanjut mengenai pola makan dan gizi yang baik untuk meningkatkan kesehatan.</p>
-                            <button type="button" class="button-result">Konsultasi Ahli Gizi Via Aplikasi</button>
-                            <button type="button" class="button-result">Registrasi Online Ahli Gizi</button>
+                        <p style="font-size: large;">Hasil BMI</p>
+                        <p id="hasil-6" style="font-size: large;">--</p>
+                        <p id="hasil-7">Hasil Keterangan</p>
+                            <button type="button" class="button-result2">Konsultasi Ahli Gizi Via Aplikasi</button>
+                            <button type="button" class="button-result2">Registrasi Online Ahli Gizi</button>
                     </section>
                     <section>
                         <h3 style="text-align: center;">Download Aplikasi</h3>
@@ -99,24 +105,25 @@
         </main>
         <footer>
             <div class="container-closer">
-                <h2>Kontak Kami</h2>
+                <h2>Kontak Saya</h2>
                 <h3>Ibnu Yudhana</h3>
-                <p>Karang Tengah, Ciledug - Tangerang Selatan</p>
-                <p><strong>Telp.</strong>(+62)812-5888-9698</p>
+                <p>Ciledug - Tangerang</p>
+                <p><strong>Telp.</strong>(+62) 812-5888-9698</p>
                 <p><strong>Website :</strong> : ....................</p>
                 <p><strong>Email :</strong> <a href="mailto:i.yudhana@gmail.com">i.yudhana@gmail.com</a></p>
-                <h3>Ikuti Kami</h3>
+                <h3>Ikuti Saya</h3>
                 <div>
-                    <a href="https://twitter.com/synu1605" target="_blank">
-                    <img src="assets/x.png" width="30px">
-                    </a>
-                    <a href="https://facebook.com/ibnu.yudhana" target="_blank">
-                    <img src="assets/facebook.png" width="50px">
-                    <a href="https://instagram.com/synu1605/" target="_blank">
-                    <img src="assets/instagram.png" width="50px">
+                        <a href="https://twitter.com/synu1605" target="_blank">
+                        <img src="assets/x.png" width="40px" class="icon-sosmed">
+                        </a>
+                        <a href="https://facebook.com/ibnu.yudhana" target="_blank">
+                        <img src="assets/facebook.png" width="50px" class="icon-sosmed">
+                        </a>
+                        <a href="https://instagram.com/synu1605/" target="_blank">
+                        <img src="assets/instagram.png" width="50px" class="icon-sosmed">
+                        </a>
                 </div>
             </div>
         </footer>
-        <script src="js/script.js"></script>
     </body>
 </html>

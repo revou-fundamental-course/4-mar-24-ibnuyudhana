@@ -10,12 +10,15 @@ header>h1 {
 .main-container {
     background-color: rgb(199, 192, 192);
     display: flex;
+    margin: 8px;
 }
 
 .container-item {
     border: 1px solid;
     width: 30%;
     padding: 24px;
+    border: 8px white solid;
+    border-radius: 16px;
 }
 
 /* Form BMI */
@@ -24,20 +27,27 @@ header>h1 {
     text-align: center;
 }
 
-.form {
-    background-color: aquamarine;
+#form {
+    background-color: #CCE4F0;
     padding: 8px;
     border-radius: 8px;
     padding-left: 24px;
 }
 
-.form-input {
+.control-label {
     font-weight: bold;
-    width: 100%;
+}
+
+.form-input {
+    width: 95%;
     border: 0px;
-    height: 12px;
+    height: 16px;
     padding-top: 8px;
-    background-color: aquamarine;
+    background-color: #CCE4F0;
+    display: table-cell;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 8px;
 }
 
 .form-button {
@@ -53,28 +63,31 @@ button {
 }
 
 #calculate-button {
-    background-color: coral;
+    background-color: #117ba9;
+    color: white;
 }
 
 /* Form Result */
 
 .result {
     text-align: center;
-    background-color: aquamarine;
+    background-color: #CCE4F0;
     padding-top: 8px;
     padding-bottom: 24px;
     border-radius: 8px;
 }
 
 .button-result {
-    background-color: coral;
+    background-color: #117ba9;
+    color: white;
 }
 
 /* Form Result 2 */
 
 .result-2 {
-    background-color: aquamarine;
+    background-color: #CCE4F0;
     padding: 8px;
+    padding-bottom: 24px;
     border-radius: 8px;
     padding-left: 24px;
 }
@@ -86,4 +99,15 @@ button {
     margin: 0px;
     padding: 24px;
     color: white;
+}
+
+.button-result2 {
+    padding-right: 8px;
+    padding-left: 8px;
+    background-color: #117ba9;
+    color: white;
+}
+
+.icon-sosmed {
+    padding-left: 24px;
 }
